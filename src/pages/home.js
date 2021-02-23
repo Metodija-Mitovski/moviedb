@@ -6,7 +6,7 @@ import UseFetch from "../components/useFetch";
 import Error from "../components/error";
 import Loading from "../components/loading";
 const Home = ({ movies, dispatch, error, isLoading, toggleHome }) => {
-  const url = "http://www.omdbapi.com/?apikey=473a4b61&s&s=movies&y=2020";
+  const url = "https://www.omdbapi.com/?apikey=473a4b61&s&s=movies&y=2020";
 
   React.useEffect(() => {
     dispatch({ type: SHOW_SEARCH_FORM });

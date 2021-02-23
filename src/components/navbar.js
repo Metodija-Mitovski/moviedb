@@ -12,7 +12,7 @@ import UseFetch from "./useFetch";
 const Navbar = ({ dispatch, showSearchForm, toggleHome }) => {
   const [searchValue, setSearchValue] = useState("");
 
-  let searchUrl = "http://www.omdbapi.com/?apikey=473a4b61&s&s=" + searchValue;
+  let searchUrl = "https://www.omdbapi.com/?apikey=473a4b61&s&s=" + searchValue;
 
   useEffect(() => {
     UseFetch(searchUrl).then((resp) => {

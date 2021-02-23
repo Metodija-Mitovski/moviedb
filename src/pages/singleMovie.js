@@ -13,7 +13,7 @@ import Error from "../components/error";
 
 const SingleMovie = ({ dispatch, isLoading, error, singleMovie }) => {
   const { id } = useParams();
-  const url = "http://www.omdbapi.com/?apikey=473a4b61&i=" + id;
+  const url = "https://www.omdbapi.com/?apikey=473a4b61&i=" + id;
   const {
     Title: title,
     Genre: genre,
