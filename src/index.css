@@ -1,13 +1,352 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Source+Serif+Pro:wght@300&display=swap");
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: rgba(11, 31, 44, 0.918);
+  /* font-family: 'Dancing Script', cursive; */
+  font-family: "Source Serif Pro", serif;
+  position: relative;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-top: 2rem;
+  background-color: rgba(7, 19, 27, 0.918);
+  -webkit-box-shadow: -2px 5px 7px 0px rgba(0, 0, 0, 0.66);
+  -moz-box-shadow: -2px 5px 7px 0px rgba(0, 0, 0, 0.66);
+  box-shadow: -2px 5px 7px 0px rgba(0, 0, 0, 0.66);
+}
+
+.logo {
+  color: rgb(47, 255, 57);
+  font-family: "Dancing Script", cursive;
+  font-size: 3rem;
+  margin-left: 2.5rem;
+}
+
+a {
+  text-decoration: none;
+}
+.search-holder {
+  margin-right: 6rem;
+  margin-top: 1.5rem;
+}
+
+input {
+  width: 28rem;
+  height: 1.8rem;
+  text-align: center;
+  border-radius: 3px;
+  background-color: rgba(179, 178, 178, 0.986);
+  border: none;
+  outline: none;
+  color: rgb(7, 7, 7);
+}
+
+/* loader */
+
+.lds-ripple {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ripple div {
+  position: absolute;
+  border: 4px solid rgb(107, 248, 114);
+  opacity: 1;
+  border-radius: 50%;
+  animation: lds-ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+.lds-ripple div:nth-child(2) {
+  animation-delay: -0.5s;
+}
+@keyframes lds-ripple {
+  0% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+    width: 72px;
+    height: 72px;
+    opacity: 0;
+  }
+}
+
+.loader-holder {
+  position: absolute;
+  top: 250%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* ////////////////// */
+
+section {
+  display: grid;
+  grid-template-columns: repeat(4, 24%);
+  justify-content: center;
+  padding-top: 60px;
+  margin-bottom: 20px;
+}
+
+.movie {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 25rem;
+  margin-bottom: 10px;
+  transition: all 0.2s ease;
+}
+
+.movie:hover {
+  border: 2px solid rgba(134, 177, 218, 0.938);
+
+  border-radius: 4px;
+}
+
+.movies-img {
+  border-radius: 4px;
+  height: 20rem;
+  width: 15rem;
+}
+
+.title-holder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+h3,
+h5 {
+  margin-bottom: 0;
+}
+
+h3 {
+  color: rgb(240, 239, 239);
+  margin-bottom: 4px;
+  margin-top: 6px;
+  font-size: 95%;
+}
+
+h5 {
+  color: rgb(182, 182, 182);
+  margin: 0;
+  font-size: 80%;
+}
+
+.error {
+  color: rgb(221, 220, 220);
+  margin-left: 35%;
+}
+
+/*/////////// single movie ///////////////*/
+.single-movie-link {
+  color: rgb(206, 205, 205);
+}
+
+.section-center {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.single-movie-img {
+  width: 50%;
+  height: 50%;
+  display: flex;
+  justify-content: flex-end;
+}
+.single-movie-data {
+  width: 50%;
+  height: 25rem;
+  margin-left: 15px;
+}
+
+.single-movie-img {
+  height: 25rem;
+}
+.single-movie-title {
+  margin-bottom: 15%;
+}
+.single-movie-title h2 {
+  color: rgb(243, 243, 243);
+}
+
+.data {
+  margin: 0;
+  color: rgb(165, 165, 165);
+  font-weight: bold;
+}
+
+.about {
+  margin-bottom: 10%;
+  color: rgb(243, 243, 243);
+}
+/* //////////////////////////////////// */
+
+/* media queris */
+@media only screen and (min-width: 300px) {
+  nav {
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+  }
+  .logo {
+    font-size: 1.5rem;
+    padding-top: 10px;
+    margin-left: 16px;
+  }
+
+  input {
+    width: 70%;
+    margin-left: 15%;
+    margin-bottom: 5px;
+    height: 1.5rem;
+    font-size: 0.7rem;
+  }
+
+  .search-holder {
+    margin: 0;
+    margin-top: 1rem;
+  }
+  section {
+    grid-template-columns: repeat(1, 1fr);
+    padding-top: 1.5rem;
+  }
+
+  .error {
+    font-size: 80%;
+  }
+
+  .section-center {
+    flex-direction: column;
+    padding: 0;
+    padding-top: 2rem;
+  }
+
+  .single-movie-img {
+    width: 95%;
+    height: 13rem;
+    justify-content: center;
+  }
+  .single-movie-data {
+    width: 90%;
+  }
+
+  .single-movie-title {
+    margin-bottom: 10%;
+    font-size: 75%;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .data {
+    font-size: 70%;
+  }
+  .about {
+    font-size: 90%;
+  }
+}
+
+@media only screen and (min-width: 480px) {
+  section {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  input {
+    font-size: 0.8rem;
+    width: 80%;
+    margin-left: 10%;
+  }
+
+  .error {
+    font-size: 100%;
+  }
+
+  .img-holder {
+    width: 80%;
+  }
+
+  .movies-img {
+    width: 100%;
+    height: 20rem;
+  }
+  .title-holder {
+    font-size: 120%;
+  }
+
+  .single-movie-img {
+    height: 20rem;
+    justify-content: center;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  section {
+    grid-template-columns: repeat(2, 40%);
+  }
+
+  input {
+    width: 60%;
+    margin-left: 20%;
+  }
+
+  .error {
+    font-size: 150%;
+  }
+
+  .section-center {
+    flex-direction: row;
+    padding-top: 10%;
+  }
+
+  .single-movie-data {
+    margin-top: 8%;
+  }
+  .single-movie-img {
+    width: 90%;
+  }
+}
+
+@media only screen and (min-width: 1366px) {
+  .logo {
+    font-size: 2rem;
+  }
+  section {
+    grid-template-columns: repeat(4, 24%);
+  }
+
+  .section-movies {
+    padding-top: 7%;
+  }
+
+  input {
+    width: 40%;
+    margin-left: 55%;
+  }
+
+  .single-movie-img {
+    width: 80%;
+    margin-left: 10%;
+  }
+  .error {
+    margin-left: 40%;
+    margin-top: 5%;
+  }
 }
