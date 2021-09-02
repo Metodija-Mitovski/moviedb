@@ -14,7 +14,6 @@ const reducer = (state = defaultState, action) => {
       movies: action.payload,
       isLoading: false,
       error: false,
-      // showSearchForm: true,
     };
   }
   if (action.type === SHOW_SINGLE_MOVIE) {
