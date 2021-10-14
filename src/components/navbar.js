@@ -51,7 +51,7 @@ const Navbar = ({ dispatch, showSearchForm, toggleHome }) => {
             <input
               value={searchValue}
               type="text"
-              placeholder="input your search words..."
+              placeholder="input your search words here..."
               onChange={(e) => {
                 setSearchValue(e.target.value);
                 dispatch({ type: LOADING });
